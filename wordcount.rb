@@ -5,12 +5,15 @@
 #  count_words   = Returns the word count.
 #  count_seconds = Returns the seconds by dividing the word count by 5,
 #                  which is how many words the average person reads per second.
+#  count_minutes = Returns the minutes by dividing the word count by 250,
+#                  which is the average reading speed in wpm.
 #  calculate     = Strips the given input content's HTML tags and returns
 #                  the number of counted words.
 #
 #  Usage:
 #  {{ content | count_words }}
 #  {{ content | count_seconds }}
+#  {{ content | count_minutes }}
 #
 module Jekyll
   module WordCount
@@ -20,6 +23,10 @@ module Jekyll
 
     def count_seconds(input)
       calculate(input) / 5
+    end
+
+    def count_minutes(input)
+      calculate(input) / 250
     end
 
     def calculate(input)

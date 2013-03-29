@@ -8,6 +8,7 @@ Place the `wordcount.rb` in your `_plugins` folder and add one or both of the be
 
 	{{ content | count_words }}
 	{{ content | count_seconds }}
+  {{ content | count_minutes }}
 
 ### Example
 
